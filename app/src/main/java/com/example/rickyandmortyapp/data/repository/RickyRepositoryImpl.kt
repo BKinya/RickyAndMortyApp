@@ -1,18 +1,24 @@
 package com.example.rickyandmortyapp.data.repository
 
 import android.content.Context
-import androidx.datastore.dataStore
 import androidx.datastore.preferences.core.edit
-import com.example.rickyandmortyapp.data.dataSources.FUN_FACT_KEY
-import com.example.rickyandmortyapp.data.dataSources.NAME_KEY
-import com.example.rickyandmortyapp.data.dataSources.dataStore
+import com.example.rickyandmortyapp.data.local.DataStore.FUN_FACT_KEY
+import com.example.rickyandmortyapp.data.local.DataStore.NAME_KEY
+import com.example.rickyandmortyapp.data.local.DataStore.dataStore
+import com.example.rickyandmortyapp.data.local.dao.RickyDao
+import com.example.rickyandmortyapp.data.remote.api.RickyApiService
 import com.example.rickyandmortyapp.domain.repository.RickyRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 
-class RickyRepositoryImpl() : RickyRepository {
+class RickyRepositoryImpl(
+  private val rickyApiService: RickyApiService,
+  private val rickyDao: RickyDao
+) : RickyRepository {
+
+  // TODO 3: Add methods to fetch data from the api and save to db
+  // TODO 4: Add methods to read data from db
+
   override suspend fun saveUserPreferences(name: String, funFact: String, context: Context) {
     context.dataStore.edit{ preferences  ->
       preferences[NAME_KEY] = name

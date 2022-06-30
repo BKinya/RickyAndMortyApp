@@ -1,10 +1,11 @@
-package com.example.rickyandmortyapp.data.database
+package com.example.rickyandmortyapp.data.local.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.rickyandmortyapp.data.entity.SampleEntity
+import com.example.rickyandmortyapp.data.local.dao.RickyDao
+import com.example.rickyandmortyapp.data.local.entity.SampleEntity
 
 @Database(
   entities = [SampleEntity::class],
@@ -28,4 +29,6 @@ abstract class RickyDatabase : RoomDatabase() {
       }
     }
   }
+
+  abstract fun rickyDao(): RickyDao
 }

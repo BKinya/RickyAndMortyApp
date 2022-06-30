@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class RickyViewModel(
-  private val repository: RickyRepository = RickyRepositoryImpl()
+  private val repository: RickyRepository
 ) : ViewModel() {
 
   private val _name = MutableLiveData<String>()

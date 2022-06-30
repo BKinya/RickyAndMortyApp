@@ -1,4 +1,4 @@
-package com.example.rickyandmortyapp.data.dataSources
+package com.example.rickyandmortyapp.data.local.DataStore
 
 import android.content.Context
 import androidx.datastore.core.DataStore

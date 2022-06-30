@@ -9,13 +9,14 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.rickyandmortyapp.R
 import com.example.rickyandmortyapp.databinding.FragmentCharactersBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharactersFragment : Fragment() {
 
   private var _binding: FragmentCharactersBinding? = null
   private val binding get() = _binding!!
 
-  private val rickViewModel: RickyViewModel by viewModels()
+  private val rickViewModel: RickyViewModel by viewModel()
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,

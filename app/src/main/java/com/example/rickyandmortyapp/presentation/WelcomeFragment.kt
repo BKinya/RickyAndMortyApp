@@ -1,23 +1,22 @@
 package com.example.rickyandmortyapp.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.rickyandmortyapp.R
 import com.example.rickyandmortyapp.databinding.FragmentWelcomeBinding
 import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WelcomeFragment : Fragment() {
 
   private var _binding: FragmentWelcomeBinding? = null
   private val binding get() = _binding!!
 
-  private val rickViewModel: RickyViewModel by viewModels()
+  private val rickViewModel: RickyViewModel by viewModel()
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
