@@ -1,23 +1,17 @@
 package com.example.rickyandmortyapp.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.rickyandmortyapp.R
-import com.example.rickyandmortyapp.databinding.FragmentSecondBinding
+import com.example.rickyandmortyapp.databinding.FragmentCharactersBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class CharactersFragment : Fragment() {
 
-  private var _binding: FragmentSecondBinding? = null
-
-  // This property is only valid between onCreateView and
-  // onDestroyView.
+  private var _binding: FragmentCharactersBinding? = null
   private val binding get() = _binding!!
 
   override fun onCreateView(
@@ -25,7 +19,7 @@ class CharactersFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
 
-    _binding = FragmentSecondBinding.inflate(inflater, container, false)
+    _binding = FragmentCharactersBinding.inflate(inflater, container, false)
     return binding.root
 
   }

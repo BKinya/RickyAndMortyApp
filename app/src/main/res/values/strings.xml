@@ -41,4 +41,7 @@
     quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus vestibulum. Fusce dictum libero
     quis erat maximus, vitae volutpat diam dignissim.
   </string>
+  <string name="nameLabel">Name</string>
+  <string name="registerLbl">Register</string>
+  <string name="welcomeLbl">Welcome %s</string>
 </resources>
