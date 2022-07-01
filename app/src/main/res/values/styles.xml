@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="textViewStyle">
-    <item name="android:paddingTop">16dp</item>
-    <item name="android:paddingBottom">6dp</item>
-    <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
-  </style>
+
+    <style name="textViewStyle">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyLarge</item>
+    </style>
 </resources>

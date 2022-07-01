@@ -15,14 +15,12 @@ class WelcomeFragment : Fragment() {
 
   private var _binding: FragmentWelcomeBinding? = null
   private val binding get() = _binding!!
-
   private val rickViewModel: RickyViewModel by viewModel()
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-
     _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -35,12 +33,6 @@ class WelcomeFragment : Fragment() {
   override fun onDestroyView() {
     super.onDestroyView()
     _binding = null
-  }
-
-  private fun registerBtnClicked() {
-    binding.registerBtn.setOnClickListener {
-      validateAndSave()
-    }
   }
 
   private fun validateAndSave() {
@@ -58,6 +50,12 @@ class WelcomeFragment : Fragment() {
     }
   }
 
+  private fun registerBtnClicked() {
+    binding.registerBtn.setOnClickListener {
+      validateAndSave()
+    }
+  }
+
   private fun isValidString(text: String?): Boolean {
     var isValid = false
     if (text != null && text.isNotEmpty()) {
@@ -66,7 +64,7 @@ class WelcomeFragment : Fragment() {
     return isValid
   }
 
-  private fun goToCharactersScreen(){
+  private fun goToCharactersScreen() {
     findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
   }
 }

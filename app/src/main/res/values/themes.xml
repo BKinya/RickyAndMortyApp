@@ -9,5 +9,4 @@
     <item name="windowSplashScreenAnimationDuration">2000</item>
     <item name="postSplashScreenTheme">@style/Theme.RickyAndMortyApp</item>
   </style>
-
 </resources>
