@@ -23,7 +23,8 @@ val appModules = module {
             baseUrl = "https://rickandmortyapi.com/api/",
             get()
         )
-    } // TODO 1: Replace "" with baseurl
+    }
+
     single<RickyApiService> { (get() as Retrofit).create(RickyApiService::class.java) }
 
     factory<RickyRepository> { RickyRepositoryImpl(get(), get()) }

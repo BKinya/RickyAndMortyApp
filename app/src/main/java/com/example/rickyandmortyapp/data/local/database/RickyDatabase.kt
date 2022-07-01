@@ -11,6 +11,7 @@ import com.example.rickyandmortyapp.models.Character
     entities = [Character::class],
     version = 5
 )
+
 abstract class RickyDatabase : RoomDatabase() {
 
     companion object {
