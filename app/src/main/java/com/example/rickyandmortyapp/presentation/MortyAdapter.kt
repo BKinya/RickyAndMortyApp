@@ -20,7 +20,8 @@ class MortyAdapter : ListAdapter<Character, MortyAdapter.MortyViewHolder>(diffCa
                 name.text = character.name
             }
         }
-    }
+
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MortyViewHolder {
         return MortyViewHolder(

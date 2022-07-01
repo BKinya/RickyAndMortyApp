@@ -19,16 +19,26 @@ class RickyRepositoryImpl(
 ) : RickyRepository {
 
   override suspend fun getCharacters(): Flow<List<Character>> {
+
     try {
+
       val response = rickyApiService.getCharacters()
-      val characters = response.results
-      characters.map { character ->
-        character.createdAt = System.currentTimeMillis()
+
+      val characters = response.results.map { character ->
+        Character(
+          id = character.id,
+          image = character.image,
+          name = character.name,
+          createdAt = System.currentTimeMillis()
+        )
       }
+
       rickyDao.insertAll(characters)
 
     } catch (e: Exception) {
-      Log.e("NetworkError", e.toString())
+
+      Log.e("NetworkError: ", e.toString())
+
     }
 
     return rickyDao.getAllCharacters()
