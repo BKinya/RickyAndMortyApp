@@ -13,56 +13,56 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WelcomeFragment : Fragment() {
 
-  private var _binding: FragmentWelcomeBinding? = null
-  private val binding get() = _binding!!
+    private var _binding: FragmentWelcomeBinding? = null
+    private val binding get() = _binding!!
 
-  private val rickViewModel: RickyViewModel by viewModel()
+    private val rickViewModel: RickyViewModel by viewModel()
 
-  override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
-    _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
-    return binding.root
-  }
-
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    super.onViewCreated(view, savedInstanceState)
-    registerBtnClicked()
-  }
-
-  override fun onDestroyView() {
-    super.onDestroyView()
-    _binding = null
-  }
-
-  private fun registerBtnClicked() {
-    binding.registerBtn.setOnClickListener {
-      validateAndSave()
-      findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
-  }
 
-  private fun validateAndSave() {
-    with(binding) {
-      val name = nameEditText.text.toString()
-      val funFact = funFactEditText.text.toString()
-
-      val isValid = isValidString(name) && isValidString(funFact)
-      if (isValid) {
-        rickViewModel.saveUserPreferences(name, funFact, context = requireContext())
-      } else {
-        Snackbar.make(binding.root, "All fields are required", Snackbar.LENGTH_LONG).show()
-      }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registerBtnClicked()
     }
-  }
 
-  private fun isValidString(text: String?): Boolean {
-    var isValid = false
-    if (text != null && text.isNotEmpty()) {
-      isValid = true
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-    return isValid
-  }
+
+    private fun registerBtnClicked() {
+        binding.registerBtn.setOnClickListener {
+            validateAndSave()
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+    }
+
+    private fun validateAndSave() {
+        with(binding) {
+            val name = nameEditText.text.toString()
+            val funFact = funFactEditText.text.toString()
+
+            val isValid = isValidString(name) && isValidString(funFact)
+            if (isValid) {
+                rickViewModel.saveUserPreferences(name, funFact, context = requireContext())
+            } else {
+                Snackbar.make(binding.root, "All fields are required", Snackbar.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun isValidString(text: String?): Boolean {
+        var isValid = false
+        if (text != null && text.isNotEmpty()) {
+            isValid = true
+        }
+        return isValid
+    }
 }
