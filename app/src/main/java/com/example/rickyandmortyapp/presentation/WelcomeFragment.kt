@@ -40,7 +40,6 @@ class WelcomeFragment : Fragment() {
   private fun registerBtnClicked() {
     binding.registerBtn.setOnClickListener {
       validateAndSave()
-      findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
     }
   }
 
@@ -52,6 +51,7 @@ class WelcomeFragment : Fragment() {
       val isValid = isValidString(name) && isValidString(funFact)
       if (isValid) {
         rickViewModel.saveUserPreferences(name, funFact, context = requireContext())
+        goToCharactersScreen()
       } else {
         Snackbar.make(binding.root, "All fields are required", Snackbar.LENGTH_LONG).show()
       }
@@ -64,5 +64,9 @@ class WelcomeFragment : Fragment() {
       isValid = true
     }
     return isValid
+  }
+
+  private fun goToCharactersScreen(){
+    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
   }
 }
