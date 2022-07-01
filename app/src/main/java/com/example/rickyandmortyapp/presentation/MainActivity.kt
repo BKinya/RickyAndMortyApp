@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         getUserName()
         checkIfRegistered()
     }
@@ -36,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     private fun getUserName() {
         rickyViewModel.getUserName(this)
