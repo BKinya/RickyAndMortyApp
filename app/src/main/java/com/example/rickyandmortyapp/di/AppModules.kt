@@ -13,15 +13,20 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 
 val appModules = module {
-  single { RickyMortyApp.INSTANCE }
-  single { RickyDatabase.getInstance(get()) }
-  factory { (get() as RickyDatabase).rickyDao() }
+    single { RickyMortyApp.INSTANCE }
+    single { RickyDatabase.getInstance(get()) }
+    factory { (get() as RickyDatabase).rickyDao() }
 
-  single { createOkClient() }
-  single { createRetrofit(baseUrl = "https://rickandmortyapi.com/api/character/?page=1", get()) } // TODO 1: Replace "" with baseurl
-  single<RickyApiService> {(get() as Retrofit).create(RickyApiService::class.java)  }
+    single { createOkClient() }
+    single {
+        createRetrofit(
+            baseUrl = "https://rickandmortyapi.com/api/",
+            get()
+        )
+    } // TODO 1: Replace "" with baseurl
+    single<RickyApiService> { (get() as Retrofit).create(RickyApiService::class.java) }
 
-  factory<RickyRepository> { RickyRepositoryImpl(get(), get()) }
+    factory<RickyRepository> { RickyRepositoryImpl(get(), get()) }
 
-  viewModel { RickyViewModel(get()) }
+    viewModel { RickyViewModel(get()) }
 }
