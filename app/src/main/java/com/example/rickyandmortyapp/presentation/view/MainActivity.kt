@@ -1,7 +1,6 @@
-package com.example.rickyandmortyapp.presentation
+package com.example.rickyandmortyapp.presentation.view
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat

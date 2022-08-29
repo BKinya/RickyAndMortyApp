@@ -1,4 +1,4 @@
-package com.example.rickyandmortyapp.presentation
+package com.example.rickyandmortyapp.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

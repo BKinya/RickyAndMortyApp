@@ -6,7 +6,7 @@
 
   <fragment
     android:id="@+id/FirstFragment"
-    android:name="com.example.rickyandmortyapp.presentation.WelcomeFragment"
+    android:name="com.example.rickyandmortyapp.presentation.view.WelcomeFragment"
     android:label="@string/first_fragment_label"
     tools:layout="@layout/fragment_welcome">
 
@@ -16,7 +16,7 @@
   </fragment>
   <fragment
     android:id="@+id/SecondFragment"
-    android:name="com.example.rickyandmortyapp.presentation.CharactersFragment"
+    android:name="com.example.rickyandmortyapp.presentation.view.CharactersFragment"
     android:label="@string/second_fragment_label"
     tools:layout="@layout/fragment_characters" />
 </navigation>
